@@ -1,10 +1,11 @@
 package com.polimi.nightdream.repository;
 
 import com.polimi.nightdream.model.Cliente;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.stereotype.Repository;
 
-public interface ClienteRepository extends JpaRepository<Cliente, Integer>, JpaSpecificationExecutor<Cliente> {
+@Repository
+public interface ClienteRepository extends PagingAndSortingRepository<Cliente, Integer>{
 
     Cliente getByNome(String nome);
 }

@@ -1,10 +1,13 @@
 package com.polimi.nightdream.repository;
 
 import com.polimi.nightdream.model.Proprietario;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.stereotype.Repository;
 
-public interface ProprietarioRepository extends JpaRepository<Proprietario, Integer>, JpaSpecificationExecutor<Proprietario> {
+@Repository
+public interface ProprietarioRepository extends PagingAndSortingRepository<Proprietario, Integer> {
 
-    Proprietario getByNome(String nome);
+    Proprietario getByEmail(String email);
+
+    Proprietario getByEmailAndPassword(String email, String password);
 }
