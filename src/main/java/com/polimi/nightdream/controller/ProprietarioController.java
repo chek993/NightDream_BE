@@ -27,10 +27,10 @@ public class ProprietarioController {
         return null;
     }
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Proprietario getProprietario(@RequestBody Proprietario proprietario){
+    public Proprietario login(@RequestBody Proprietario proprietario){
         return proprietarioRepository.getByEmailAndPassword(proprietario.getEmail(), proprietario.getPassword());
     }
 

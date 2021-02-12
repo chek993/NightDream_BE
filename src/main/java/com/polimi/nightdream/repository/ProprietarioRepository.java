@@ -10,4 +10,6 @@ public interface ProprietarioRepository extends PagingAndSortingRepository<Propr
     Proprietario getByEmail(String email);
 
     Proprietario getByEmailAndPassword(String email, String password);
+
+
 }
